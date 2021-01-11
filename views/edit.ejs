@@ -1,0 +1,17 @@
+<h1>Edit <%= friend.name %></h1>
+
+<form action="/<%= friend._id %>?_method=PUT" method='POST' >
+    <div>
+        <label for="name">Name</label><br>
+        <input id="name" name="name" value="<%= friend.name %>" type="text" required/>
+    </div>
+    <div>
+        <label for="age">Age</label><br>
+        <input id="age" name="age" value="<%= friend.age %>" type="number" required/>
+    </div>
+    <div>
+        <label for="desc">Description</label><br>
+        <textarea name="desc" id="desc"><%= friend.description %></textarea>
+    </div>
+    <button type="submit">Update</button>
+</form>

@@ -1,0 +1,32 @@
+<h1>Add Friend</h1>
+
+<form method="POST" action="/">
+    <div>
+        <label for="name">Name</label><br>
+        <input id="name" name="name" placeholder="Name" type="text" required/>
+    </div>
+    <div>
+        <label for="age">Age</label><br>
+        <input id="age" name="age" placeholder="Age" type="number" required/>
+    </div>
+    <div>
+        <label for="desc">Description</label><br>
+        <textarea name="desc" id="desc"></textarea>
+    </div>
+    <button type="submit">Add Friend</button>
+</form>
+
+<h1>Friend List</h1>
+
+<ol>
+<% if(people){people.forEach((person)=>{ %>
+<li><h5><%= person.name %></h5> 
+    <ul>
+      <li>Age: <%= person.age %></li>
+      <li>Desc: <%= person.description.substring(0,20) %>...<br>
+    <a href="/<%= person._id %>"><button>Read More</button></a>
+    </li>
+    </ul>
+</li>
+<% })} %>
+</ol>
