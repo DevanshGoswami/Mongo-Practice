@@ -11,7 +11,12 @@ app.use(overRide("_method"));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://localhost/friends");
+mongoose.connect("mongodb+srv://devansh:password@123@cluster0.pfmml.mongodb.net/friends?retryWrites=true&w=majority",{ useNewUrlParser: true ,useUnifiedTopology: true})
+.then(() => console.log( 'Database Connected' ))
+.catch(err => console.log( err ));
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
 
 

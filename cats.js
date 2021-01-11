@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/cat_app");
+mongoose.connect("mongodb+srv://devansh:password@123@cluster0.pfmml.mongodb.net/cats?retryWrites=true&w=majority");
 
 var catSchema = new mongoose.Schema({
    name: String,
